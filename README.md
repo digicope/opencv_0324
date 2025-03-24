@@ -1,5 +1,5 @@
 
-##  OpenCV와 GPT를 활용한 어플리케이션 개발 (2025.03.24~04.24, 804Hr)
+##  OpenCV와 GPT를 활용한 어플리케이션 개발 (2025.03.24~04.24, 80Hr)
 <br>
 
 ## git 주소 :    https://github.com/digicope/opencv_0324
