@@ -1,8 +1,8 @@
 # opencv_exam_01.py
+# 이미지 변환 처리 파이썬 모듈 
 
 import cv2
 import numpy as np
-
 
 def cvt_color(img):   # 색상변경
     # 색상 변경 : gray
@@ -70,6 +70,18 @@ def rotation(img):
     M = cv2.getRotationMatrix2D((c/2,r/2),90,1) # 중심,회전각(CCW),크기비율
     new_img = cv2.warpAffine(img,M,(c,r))
     cv2.imshow("rotation_image", new_img)
+
+# 상하 반전
+def vertical_flop(img):
+    # img = cv2.imread('image.jpg')  # 512*512*3,(512,512,3)
+    vertical_flipped_img = cv2.flip(img, 0)
+    cv2.imshow("Flipped Image (Vertical Flip)", vertical_flipped_img)
+
+# 좌우 반전
+def horizontal_flop(img):
+    # img = cv2.imread('image.jpg')  # 512*512*3,(512,512,3)
+    horiz_flipped_img = cv2.flip(img, 1)
+    cv2.imshow("Flipped Image (Horizontal Flip)", horiz_flipped_img)
 
 # 임계값 처리 : threshold
 def threshold(img):
@@ -164,31 +176,3 @@ def template_match(img):
     bottom =(top[0] + w, top[1] + h)
     cv2.rectangle(img, top, bottom, 255, 2) # 255: Blue, 2:thickness
     cv2.imshow("image", img)
-
-if __name__ =='__main__':
-    img = cv2.imread('image.jpg')
-    # # print(img)
-    #
-    # # 사진 읽기와 쓰기
-    # cv2.imshow('org_image', img)
-    # cv2.imwrite('saved_image.jpg', img)
-
-    # cvt_color(img)
-    # resize()
-    # crop()
-    # tranlsation()
-    # rotation()
-    # threshold()
-    # filter()
-    # GaussianBlur()
-    # medianBlur()
-    # erosion()
-    # dilation()
-    # sobel()
-    # canny(img)
-    contour(img)
-    # template_match(img)
-
-
-    cv2.waitKey()
-
